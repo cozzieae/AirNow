@@ -13,5 +13,6 @@ data class Moment(
     @PrimaryKey val id: UUID,
     var title: String,
     var description: String,
-    var timestamp: Date = Date()
+    var timestamp: Date = Date(),
+    var snap: String
 )

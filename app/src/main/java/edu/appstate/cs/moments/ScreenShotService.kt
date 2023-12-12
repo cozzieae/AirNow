@@ -28,7 +28,7 @@ class ScreenshotService : Service() {
     private var mServiceHandler: ServiceHandler? = null
     private var msg: Message? = null
     private var webview: WebView? = null
-
+    var filename: String = ""
     // Handler that receives messages from the thread
     private inner class ServiceHandler(looper: Looper?) : Handler(looper!!) {
         override fun handleMessage(msg: Message) {
@@ -45,7 +45,7 @@ class ScreenshotService : Service() {
             //width x height of your webview and the resulting screenshot
             webview!!.measure(600, 400)
             webview!!.layout(0, 0, 600, 400)
-            webview!!.loadUrl("http://stackoverflow.com")
+            webview!!.loadUrl("https://fire.airnow.gov/")
             webview!!.webViewClient = object : WebViewClient() {
                 override fun onReceivedError(
                     view: WebView,
@@ -53,7 +53,7 @@ class ScreenshotService : Service() {
                     description: String,
                     failingUrl: String
                 ) {
-                    //without this method, your app may crash...
+
                 }
 
                 override fun onPageFinished(view: WebView, url: String) {
@@ -78,7 +78,7 @@ class ScreenshotService : Service() {
 
             //here I save the bitmap to file
             val b = webview!!.drawingCache
-            val file = File("/sdcard/example-screenshot.png")
+            val file = File(filename)
             val out: OutputStream
             try {
                 out = BufferedOutputStream(FileOutputStream(file))
@@ -87,7 +87,7 @@ class ScreenshotService : Service() {
             } catch (e: IOException) {
                 Log.e(
                     "ScreenshotService",
-                    "IOException while trying to save thumbnail, Is /sdcard/ writable?"
+                    "IOException while trying to save thumbnail"
                 )
                 e.printStackTrace()
             }

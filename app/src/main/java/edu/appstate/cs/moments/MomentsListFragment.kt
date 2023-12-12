@@ -85,11 +85,13 @@ class MomentsListFragment: Fragment() {
 
     private fun showNewMoment() {
         viewLifecycleOwner.lifecycleScope.launch {
+
             val newMoment = Moment(
                 id = UUID.randomUUID(),
                 title = "",
                 description = "",
-                timestamp = Date()
+                timestamp = Date(),
+                snap = ScreenshotService().filename
             )
             momentsListViewModel.addMoment(newMoment)
             findNavController().navigate(
