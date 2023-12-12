@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">Mountaineer Moments</string>
+    <string name="app_name">AirNowSnapShot</string>
     <string name="prev_button">Prev</string>
     <string name="next_button">Next</string>
-    <string name="already_at_first">You are already on the first moment.</string>
-    <string name="already_at_last">You are already on the last moment.</string>
+    <string name="already_at_first">You are already on the first snap.</string>
+    <string name="already_at_last">You are already on the last snap.</string>
     <string name="moment_title_label">Title</string>
-    <string name="moment_title_hint">Enter a title for the moment.</string>
+    <string name="moment_title_hint">Enter a title for the snap.</string>
     <string name="moment_description_label">Description</string>
-    <string name="moment_description_hint">Enter details of your visit here.</string>
+    <string name="moment_description_hint">Enter any notable details.</string>
     <string name="moments_details_label">Details</string>
-    <string name="new_moment">New Moment</string>
-    <string name="delete_moment">Delete Moment</string>
+    <string name="new_moment">New Snap</string>
+    <string name="delete_moment">Delete Snap</string>
 </resources>

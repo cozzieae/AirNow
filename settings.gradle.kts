@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Mountaineer Moments"
+rootProject.name = "AirNowSnapShots"
 include(":app")
  

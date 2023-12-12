@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -15,7 +16,7 @@
     <EditText
         android:id="@+id/moment_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:hint="@string/moment_title_hint"
         android:importantForAutofill="no"
         android:inputType="text" />
@@ -48,17 +49,32 @@
         <Button
             android:id="@+id/moment_date"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Wed May 11 2022"
-            android:layout_weight="1"/>
+            android:layout_height="76dp"
+            android:layout_weight="1"
+            tools:text="Wed May 11 2022" />
 
         <Button
             android:id="@+id/moment_time"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="11:56 EST"
-            android:layout_weight="1"/>
+            android:layout_height="76dp"
+            android:layout_weight="1"
+            tools:text="11:56 EST" />
+
+        <Button
+            android:id="@+id/Snap"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:layout_weight="1"
+            android:text="Snap" />
+
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="429dp"
+        app:srcCompat="@android:drawable/stat_notify_error" />
+
 
 </LinearLayout>

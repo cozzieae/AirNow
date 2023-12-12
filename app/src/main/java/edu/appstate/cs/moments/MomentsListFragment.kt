@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -51,6 +52,7 @@ class MomentsListFragment: Fragment() {
                 momentsListViewModel.moments.collect { moments ->
                     binding.momentsRecyclerView.adapter = MomentsListAdapter(moments) { momentId ->
                         findNavController().navigate(
+
                             MomentsListFragmentDirections.showMomentDetail(momentId)
                         )
                     }
@@ -73,6 +75,8 @@ class MomentsListFragment: Fragment() {
         return when (item.itemId) {
             R.id.new_moment -> {
                 showNewMoment()
+
+
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -90,6 +94,8 @@ class MomentsListFragment: Fragment() {
             momentsListViewModel.addMoment(newMoment)
             findNavController().navigate(
                 MomentsListFragmentDirections.showMomentDetail(newMoment.id)
+
+
             )
         }
     }
