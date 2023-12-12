@@ -17,6 +17,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.appstate.cs.moments.databinding.FragmentMomentsListBinding
 import kotlinx.coroutines.launch
+import java.io.File
 import java.util.Date
 import java.util.UUID
 
@@ -41,6 +42,7 @@ class MomentsListFragment: Fragment() {
     ): View? {
         _binding = FragmentMomentsListBinding.inflate(inflater, container, false)
         binding.momentsRecyclerView.layoutManager = LinearLayoutManager(context)
+
         return binding.root
     }
 
@@ -94,6 +96,7 @@ class MomentsListFragment: Fragment() {
                 snap = ScreenshotService().filename
             )
             momentsListViewModel.addMoment(newMoment)
+
             findNavController().navigate(
                 MomentsListFragmentDirections.showMomentDetail(newMoment.id)
 

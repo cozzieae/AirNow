@@ -11,6 +11,7 @@ class MomentsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_moments)
         setSupportActionBar(findViewById(R.id.app_toolbar))
-
+        val myWebView: WebView = findViewById(R.id.webView)
+        myWebView.loadUrl("https://fire.airnow.gov/")
     }
 }

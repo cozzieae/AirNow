@@ -19,7 +19,7 @@ class MomentsRepository private constructor(
             context.applicationContext,
             MomentsDatabase::class.java,
             DATABASE_NAME
-        )
+        ).fallbackToDestructiveMigration()
         .build()
 
     fun getMoments(): Flow<List<Moment>> = database.momentsDao().getMoments()
